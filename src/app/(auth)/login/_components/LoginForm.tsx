@@ -32,7 +32,7 @@ export default function LoginForm() {
 
   return (
     <div className="mt-20 grid place-content-center space-y-6 text-white md:mt-60">
-      <div className="mx-auto w-full max-w-3xl rounded-3xl border border-transparent bg-primary/60 p-20 shadow-sm shadow-stone-800">
+      <div className="mx-auto min-w-[24rem] rounded-3xl border border-transparent p-4 shadow-sm shadow-stone-800 md:bg-primary/60 md:p-10">
         <div className="space-y-2 text-center">
           <h1 className="text-2xl font-semibold tracking-tight">
             Welcome back
@@ -46,10 +46,10 @@ export default function LoginForm() {
           <GoogleLogo style={{ width: "20px", height: "20px" }} />
           <span className="text-base font-medium">Google</span>
         </Button>
-        <div className="flex items-center justify-center gap-4">
-          <Separator className="w-28 bg-zinc-900" />
-          <span>Or continue with</span>
-          <Separator className="w-28 bg-zinc-900" />
+        <div className="my-4 flex items-center justify-center gap-4">
+          <Separator className="w-32 bg-gradient-to-l from-zinc-700 via-primary to-zinc-950" />
+          <span className="text-sm">Or</span>
+          <Separator className="w-32 bg-gradient-to-r from-zinc-700 via-primary to-zinc-950" />
         </div>
         <Form {...form}>
           <form
