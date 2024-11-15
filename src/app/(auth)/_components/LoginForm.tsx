@@ -16,6 +16,7 @@ import { Separator } from "@/components/ui/separator";
 import GoogleLogo from "./GoogleLogo";
 import Link from "next/link";
 import { loginSchema, LoginValues } from "@/lib/validation";
+import { Sparkle } from "lucide-react";
 
 export default function LoginForm() {
   const form = useForm<LoginValues>({
@@ -31,14 +32,18 @@ export default function LoginForm() {
   }
 
   return (
-    <div className="mt-20 grid place-content-center space-y-6 text-white md:mt-60">
-      <div className="mx-auto min-w-[24rem] rounded-3xl border border-transparent p-4 shadow-sm shadow-stone-800 md:bg-primary/60 md:p-10">
-        <div className="space-y-2 text-center">
+    <div>
+      <div className="rounded-3xl border border-transparent p-5 shadow-sm shadow-stone-800 md:mx-auto md:w-[26rem] md:bg-primary/60 md:px-5 md:py-10">
+        <div className="mb-4 space-y-2 text-center">
           <h1 className="text-2xl font-semibold tracking-tight">
-            Welcome back
+            Sign in to{" "}
+            <span className="after: relative after:absolute after:inset-0 after:top-5 after:-z-10 after:h-2 after:w-full after:bg-purple-800">
+              Pixura
+            </span>
           </h1>
-          <p className="text-sm text-muted-foreground">
-            Enter your credentials to sign in to your account
+          <p className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
+            Log-in and start creating your own art{" "}
+            <Sparkle className="size-4 text-yellow-500" />
           </p>
         </div>
 
@@ -61,7 +66,7 @@ export default function LoginForm() {
               name="email"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Email</FormLabel>
+                  <FormLabel className="ml-2">Email</FormLabel>
                   <FormControl>
                     <Input
                       placeholder="example@example.com"
@@ -69,7 +74,7 @@ export default function LoginForm() {
                       {...field}
                     />
                   </FormControl>
-                  <FormMessage />
+                  <FormMessage className="ml-2" />
                 </FormItem>
               )}
             />
@@ -78,7 +83,7 @@ export default function LoginForm() {
               name="password"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Password</FormLabel>
+                  <FormLabel className="ml-2">Password</FormLabel>
                   <FormControl>
                     <Input
                       placeholder="Enter your password"
@@ -86,7 +91,7 @@ export default function LoginForm() {
                       {...field}
                     />
                   </FormControl>
-                  <FormMessage />
+                  <FormMessage className="ml-2" />
                 </FormItem>
               )}
             />
@@ -95,7 +100,7 @@ export default function LoginForm() {
             </Button>
           </form>
         </Form>
-        <div className="mt-4 flex items-center justify-between px-px text-sm text-muted-foreground">
+        <div className="mt-4 flex flex-wrap items-center justify-between gap-x-12 gap-y-2 px-px text-sm text-muted-foreground">
           <p className="text-left">
             Don&apos;t have an account?{" "}
             <Link

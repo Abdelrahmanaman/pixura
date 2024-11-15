@@ -8,3 +8,12 @@ export const loginSchema = z.object({
 });
 
 export type LoginValues = z.infer<typeof loginSchema>;
+
+export const signupSchema = z.object({
+  firstName: z.string().min(2, "Too Short!"),
+  lastName: z.string().min(2, "Too Short!"),
+  email: z.string().email("Invalid email address"),
+  password: z.string().regex(strongPasswordRegex, "Invalid password"),
+});
+
+export type SignupValues = z.infer<typeof signupSchema>;

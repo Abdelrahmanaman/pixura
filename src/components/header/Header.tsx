@@ -3,7 +3,7 @@ import React from "react";
 
 export default function Header() {
   return (
-    <header className="flex items-center justify-between p-4 text-white">
+    <header className="sticky top-0 z-20 flex items-center justify-between bg-primary p-4 text-white">
       <h1 className="text-3xl font-bold">Pixura</h1>
       <nav>
         <ul className="flex items-center gap-4">
